@@ -48,6 +48,10 @@
                             <constraint firstItem="Ck1-FM-shZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="smt-gc-7sY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="TMU-GJ-akf" id="orX-M6-jPY"/>
+                        <outlet property="slider" destination="ZSt-2H-Frk" id="zq9-uk-Slp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

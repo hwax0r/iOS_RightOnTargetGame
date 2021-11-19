@@ -17,6 +17,18 @@ class ViewController: UIViewController {
     var round: UInt8 = 1
     // количество заработанных очков
     var points: Int = 0
+    
+    override func loadView() {
+        super.loadView()
+        print("loadView")
+        
+        // метка для вывода номера версии
+        let versionLabel = UILabel(frame: CGRect(x: 20, y: 10, width: 200, height: 20))
+        // изменяеим текст метки
+        versionLabel.text = "Версия 1.1"
+        // добавляем метку в родительский View
+        view.addSubview(versionLabel)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +38,12 @@ class ViewController: UIViewController {
         number = UInt8.random(in: 1...50)
         // смена текста метки на загаданное число
         label.text = String(number)
+        
+        // значение слайдера установлено в сториборде
+        // на середину - 25 и отображается там правильно,
+        // но в симуляторе при запуске приложения значение на 1 ???
+        // непонятно (в туториале вроде всё ок)
+        slider.value = 25
         
     }
     

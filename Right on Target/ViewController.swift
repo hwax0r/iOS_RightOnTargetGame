@@ -102,13 +102,21 @@ class ViewController: UIViewController {
         label.text = String(number)
     }
     
-    @IBAction func showNextScreen(){
+    // ленивое свойство для хранения экземпляра secondViewController
+    lazy var secondViewController: SecondViewController = getSecondViewController()
+    
+    // приватный метод, загружающий View Controller
+    private func getSecondViewController() -> SecondViewController {
         // загрузка storyboard
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         // загрузка viewController и его сцены со storyboard
         let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
+        return viewController as! SecondViewController
+    }
+    
+    @IBAction func showNextScreen(){
         // отображение сцены на экране
-        self.present(viewController, animated: true, completion: nil)
+        self.present(secondViewController, animated: true, completion: nil)
     }
 
 }

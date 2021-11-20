@@ -61,11 +61,11 @@
 				CD4086C427458358008BEEB8 /* AppDelegate.swift */,
 				CD4086C627458358008BEEB8 /* SceneDelegate.swift */,
 				CD4086C827458358008BEEB8 /* ViewController.swift */,
-				CD4086CA27458358008BEEB8 /* Main.storyboard */,
-				CD4086CD2745835A008BEEB8 /* Assets.xcassets */,
-				CD4086CF2745835A008BEEB8 /* LaunchScreen.storyboard */,
-				CD4086D22745835A008BEEB8 /* Info.plist */,
 				CDE162B0274837F400027FCC /* SecondViewController.swift */,
+				CD4086CA27458358008BEEB8 /* Main.storyboard */,
+				CD4086CF2745835A008BEEB8 /* LaunchScreen.storyboard */,
+				CD4086CD2745835A008BEEB8 /* Assets.xcassets */,
+				CD4086D22745835A008BEEB8 /* Info.plist */,
 			);
 			path = "Right on Target";
 			sourceTree = "<group>";

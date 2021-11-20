@@ -101,6 +101,15 @@ class ViewController: UIViewController {
         number = UInt8.random(in: 1...50)
         label.text = String(number)
     }
+    
+    @IBAction func showNextScreen(){
+        // загрузка storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        // загрузка viewController и его сцены со storyboard
+        let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
+        // отображение сцены на экране
+        self.present(viewController, animated: true, completion: nil)
+    }
 
 }
 

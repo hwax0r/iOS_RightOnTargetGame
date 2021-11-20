@@ -41,9 +41,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fI5-wL-vBW">
                                 <rect key="frame" x="735" y="363" width="97" height="30"/>
                                 <state key="normal" title="О программе"/>
-                                <connections>
-                                    <segue destination="t9c-We-dOq" kind="show" id="IXD-da-G1b"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -81,9 +78,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqg-aR-zme">
                                 <rect key="frame" x="425.5" y="192" width="45" height="30"/>
                                 <state key="normal" title="Назад"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="87F-m8-WwR"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LWy-hl-ADN"/>

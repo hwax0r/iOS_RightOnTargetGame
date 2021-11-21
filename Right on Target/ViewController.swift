@@ -113,11 +113,6 @@ class ViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
         return viewController as! SecondViewController
     }
-    
-    @IBAction func showNextScreen(){
-        // отображение сцены на экране
-        self.present(secondViewController, animated: true, completion: nil)
-    }
 
 }
 

@@ -8,111 +8,78 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // Сущность игры
+    var game: Game!
+    
+    // Элементы сцены
     @IBOutlet var slider: UISlider!
     @IBOutlet var label: UILabel!
-    
-    // загаданное число
-    var number: UInt8 = 0
-    // номер раунда
-    var round: UInt8 = 1
-    // количество заработанных очков
-    var points: Int = 0
+
+    // MARK: Жизненный цикл
     
     override func loadView() {
         super.loadView()
-        print("loadView")
         
         // метка для вывода номера версии
         let versionLabel = UILabel(frame: CGRect(x: 20, y: 10, width: 200, height: 20))
+        
+        // текущий номер версии
+        let applicationVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         // изменяеим текст метки
-        versionLabel.text = "Версия 1.1"
+        versionLabel.text = "Версия \(applicationVersion)"
         // добавляем метку в родительский View
         view.addSubview(versionLabel)
+        
+        // Установка бегунка слайдера на середину
+        slider.value = 25
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("viewDidLoad")
         
-        // генерация случайного числа
-        number = UInt8.random(in: 1...50)
+        // Экземпляр сущности "Игра"
+        game = Game(startValue: 1, endValue: 50, rounds: 5)
+        
         // смена текста метки на загаданное число
-        label.text = String(number)
-        
-        // значение слайдера установлено в сториборде
-        // на середину - 25 и отображается там правильно,
-        // но в симуляторе при запуске приложения значение на 1 ???
-        // непонятно (в туториале вроде всё ок)
-        slider.value = 25
-        
+        updateLabelWithSecretNumber(newSecretNumber: game.currentSecretValue)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("viewWillAppear")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("viewDidAppear")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("viewWillDisappear")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("viewDidDisappear")
-    }
+    // MARK: Взаимодействие View - Model
     
     @IBAction func checkNumber() {
-        // получаем чило, на которое установлен ползунок слайдера
-        let numSlider = UInt8(slider.value.rounded())
+        // Подсчёт очков за раунд
+        game.calculateScore(with: Int(slider.value))
         
-        // сравниваем значение с загаданным и считаем очки
-        if numSlider > number {
-            points += 25 - Int(numSlider) + Int(number)
-        } else if numSlider < number {
-            points += 25 - Int(number) + Int(numSlider)
+        // Проверка окончания игры
+        if game.isGameEnded {
+            showAlertWith(score: game.score)
+            // Запуск новой игры
+            game.restartGame()
         } else {
-            points += 25
+            game.startNewRound()
         }
-        
-        // окончание игры по истечении 5 раундов
-        if round == 5 {
-            // вывод информационного окна с итогами игры
-            let alert = UIAlertController(title: "Игра окончена",
-                                          message: "Вы заработали \(points) очков",
-                                          preferredStyle: .alert)
-            alert.addAction(
-                UIAlertAction(title: "Начать заново",
-                              style: .default,
-                              handler: nil))
-            present(alert, animated: true, completion: nil)
-            
-            round = 1
-            points = 0
-        } else {
-            round += 1
-        }
-        
-        number = UInt8.random(in: 1...50)
-        label.text = String(number)
+       
+        // Обновление текста метки на новое загаданное число
+        updateLabelWithSecretNumber(newSecretNumber: game.currentSecretValue)
     }
     
-    // ленивое свойство для хранения экземпляра secondViewController
-    lazy var secondViewController: SecondViewController = getSecondViewController()
-    
-    // приватный метод, загружающий View Controller
-    private func getSecondViewController() -> SecondViewController {
-        // загрузка storyboard
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        // загрузка viewController и его сцены со storyboard
-        let viewController = storyboard.instantiateViewController(identifier: "SecondViewController")
-        return viewController as! SecondViewController
+    // Отображение всплывающего окна со счётом
+    private func showAlertWith(score: Int) {
+        let alert = UIAlertController(title: "Игра окончена",
+                                      message: "Вы набрали \(score) очков",
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Начать заново",
+                                      style: .default,
+                                      handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
-
+    
+    // Обновление текста метки новым загаданным числом
+    private func updateLabelWithSecretNumber(newSecretNumber: Int) {
+        label.text = String(newSecretNumber)
+    }
+    
 }
-

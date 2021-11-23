@@ -48,7 +48,7 @@ class Game: GameProtocol {
     
     init?(startValue: Int, endValue: Int, rounds: Int){
         // Стартовое значение для выбора случайного числа не может быть больше конечного
-        guard startValue >= endValue else {
+        guard startValue <= endValue else {
             return nil
         }
         minSecretValue = startValue

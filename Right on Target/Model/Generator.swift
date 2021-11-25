@@ -12,7 +12,7 @@ protocol GeneratorProtocol {
 }
 
 
-class Generator: GeneratorProtocol {
+class NumberGenerator: GeneratorProtocol {
     
     private let startRangeValue: Int
     private let endRangeValue: Int

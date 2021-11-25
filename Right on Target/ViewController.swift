@@ -38,21 +38,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Экземпляр сущности "Игра"
-        game = Game(startValue: 1, endValue: 50, rounds: 5)
+        // Генератор случайных чисел
+        let generator = NumberGenerator(startValue: 1, endValue: 50)!
         
-        // смена текста метки на загаданное число
-        updateLabelWithSecretNumber(newSecretNumber: game.currentSecretValue)
+        // Экземпляр сущности "Игра"
+        game = Game(valueGenerator: generator, rounds: 5)
+        
+        // Обновление текста метки на текущее загаданное число
+        updateLabelWithSecretNumber(newSecretNumber: game.currentRound.currentSecretValue)
     }
     
     // MARK: Взаимодействие View - Model
     
     @IBAction func checkNumber() {
         // Подсчёт очков за раунд
-        game.calculateScore(with: Int(slider.value))
+        game.currentRound.calculateScore(with: Int(slider.value))
         
         // Проверка окончания игры
         if game.isGameEnded {
+            // Показ окна с результатами
             showAlertWith(score: game.score)
             // Запуск новой игры
             game.restartGame()
@@ -61,7 +65,7 @@ class ViewController: UIViewController {
         }
        
         // Обновление текста метки на новое загаданное число
-        updateLabelWithSecretNumber(newSecretNumber: game.currentSecretValue)
+        updateLabelWithSecretNumber(newSecretNumber: game.currentRound.currentSecretValue)
     }
     
     // Отображение всплывающего окна со счётом

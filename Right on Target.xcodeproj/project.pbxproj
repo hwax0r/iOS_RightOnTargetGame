@@ -16,6 +16,7 @@
 		CD4086CE2745835A008BEEB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD4086CD2745835A008BEEB8 /* Assets.xcassets */; };
 		CD4086D12745835A008BEEB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4086CF2745835A008BEEB8 /* LaunchScreen.storyboard */; };
 		CD4F63C2275182AD00D49442 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4F63C1275182AD00D49442 /* MainMenuController.swift */; };
+		CD7E49E52751837D00460422 /* ColorsGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7E49E42751837D00460422 /* ColorsGameController.swift */; };
 		CDB6034C274D1A5900AAB12E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB6034B274D1A5900AAB12E /* Game.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		CD4086D02745835A008BEEB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD4086D22745835A008BEEB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD4F63C1275182AD00D49442 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
+		CD7E49E42751837D00460422 /* ColorsGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsGameController.swift; sourceTree = "<group>"; };
 		CDB6034B274D1A5900AAB12E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				CD4086C627458358008BEEB8 /* SceneDelegate.swift */,
 				CD4F63C1275182AD00D49442 /* MainMenuController.swift */,
 				CD4086C827458358008BEEB8 /* NumbersGameController.swift */,
+				CD7E49E42751837D00460422 /* ColorsGameController.swift */,
 				CD4086CA27458358008BEEB8 /* Main.storyboard */,
 				CD4086CF2745835A008BEEB8 /* LaunchScreen.storyboard */,
 				CD4086CD2745835A008BEEB8 /* Assets.xcassets */,
@@ -162,6 +165,7 @@
 				CD4086C927458358008BEEB8 /* NumbersGameController.swift in Sources */,
 				CD3A532F274D98C30080B279 /* Generator.swift in Sources */,
 				CD4086C527458358008BEEB8 /* AppDelegate.swift in Sources */,
+				CD7E49E52751837D00460422 /* ColorsGameController.swift in Sources */,
 				CD3A5332274D98DE0080B279 /* GameRound.swift in Sources */,
 				CD4086C727458358008BEEB8 /* SceneDelegate.swift in Sources */,
 			);

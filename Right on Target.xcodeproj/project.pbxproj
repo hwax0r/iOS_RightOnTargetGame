@@ -17,6 +17,7 @@
 		CD4086D12745835A008BEEB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4086CF2745835A008BEEB8 /* LaunchScreen.storyboard */; };
 		CD4F63C2275182AD00D49442 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4F63C1275182AD00D49442 /* MainMenuController.swift */; };
 		CD7E49E52751837D00460422 /* ColorsGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7E49E42751837D00460422 /* ColorsGameController.swift */; };
+		CD7E49E92752D17D00460422 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7E49E82752D17D00460422 /* Colors.swift */; };
 		CDB6034C274D1A5900AAB12E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB6034B274D1A5900AAB12E /* Game.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		CD4086D22745835A008BEEB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD4F63C1275182AD00D49442 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		CD7E49E42751837D00460422 /* ColorsGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsGameController.swift; sourceTree = "<group>"; };
+		CD7E49E82752D17D00460422 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CDB6034B274D1A5900AAB12E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				CDB6034B274D1A5900AAB12E /* Game.swift */,
 				CD3A532E274D98C30080B279 /* Generator.swift */,
 				CD3A5331274D98DE0080B279 /* GameRound.swift */,
+				CD7E49E82752D17D00460422 /* Colors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD4F63C2275182AD00D49442 /* MainMenuController.swift in Sources */,
+				CD7E49E92752D17D00460422 /* Colors.swift in Sources */,
 				CDB6034C274D1A5900AAB12E /* Game.swift in Sources */,
 				CD4086C927458358008BEEB8 /* NumbersGameController.swift in Sources */,
 				CD3A532F274D98C30080B279 /* Generator.swift in Sources */,

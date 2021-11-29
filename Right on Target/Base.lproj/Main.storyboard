@@ -118,7 +118,6 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#FFFFFF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gph-gd-pGy" userLabel="HexColorToBeGuessed">
                                 <rect key="frame" x="408" y="125" width="80.5" height="24"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -129,11 +128,17 @@
                                 <state key="normal" title="#FFFFFF">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressButton:" destination="EEq-9F-RnX" eventType="touchUpInside" id="Lhy-P2-mwS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AH-GI-eCm" userLabel="FourthButton">
                                 <rect key="frame" x="553" y="192" width="60" height="30"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <state key="normal" title="#FFFFFF"/>
+                                <connections>
+                                    <action selector="didPressButton:" destination="EEq-9F-RnX" eventType="touchUpInside" id="zaX-Zt-HUg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfw-sG-TnZ" userLabel="SecondButton">
                                 <rect key="frame" x="373" y="192" width="60" height="30"/>
@@ -141,6 +146,9 @@
                                 <state key="normal" title="#FFFFFF">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressButton:" destination="EEq-9F-RnX" eventType="touchUpInside" id="Tvh-Cx-FDe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkz-pm-mNh" userLabel="ThirdButton">
                                 <rect key="frame" x="463" y="192" width="60" height="30"/>
@@ -148,6 +156,9 @@
                                 <state key="normal" title="#FFFFFF">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="didPressButton:" destination="EEq-9F-RnX" eventType="touchUpInside" id="COP-Xe-BKz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZNN-dE-nDu"/>
@@ -166,6 +177,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6sW-kr-eV8"/>
+                    <connections>
+                        <outlet property="button1" destination="3Gv-Jw-j7u" id="Qxw-Hk-ghI"/>
+                        <outlet property="button2" destination="pfw-sG-TnZ" id="T1Z-vN-CWs"/>
+                        <outlet property="button3" destination="xkz-pm-mNh" id="fvx-AI-RQT"/>
+                        <outlet property="button4" destination="7AH-GI-eCm" id="I8L-xZ-JJ7"/>
+                        <outlet property="hexLabel" destination="gph-gd-pGy" id="hkr-pN-eOH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p8H-7Q-Do1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,9 +219,6 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

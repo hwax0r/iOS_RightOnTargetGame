@@ -9,47 +9,53 @@ import UIKit
 
 class ColorsGameController: UIViewController {
     // Экземпляр игры
-    var game: colorsGame!
+    var game: colorGame!
     
-    // Метка с HEX значением текущего загаданного цвета
-    @IBOutlet var hexLabel: UILabel!
+    // Метка со значением score
+    @IBOutlet var scoreLabel: UILabel!
+    // Метка с кол-вом раундов
+    @IBOutlet var roundsLabel: UILabel!
     
     // Кнопки слева направо
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
     @IBOutlet var button4: UIButton!
-    // Нажатая кнопка
-    var pressedButton: UIButton?
-    
+
     @IBAction func didPressButton(_ sender: UIButton){
-        print("Button: \(sender.title(for: .normal))")
-        pressedButton = sender
-        
-        if pressedButton != nil {
-            print("Button pressed")
-            if game.isCorrectAnswer(button: pressedButton!) {
-                print("OK")
-                game.newRound()
-                view.backgroundColor = game.secretColor
-            } else {
-                print("NO")
-            }
-            print()
-        }
+        // Передача значения кнопки в игру для проверки
+        game.compareAnswer(with: sender)
+        scoreLabel.text = "Score: \(game.score)"
+        roundsLabel.text = "Rounds: \(game.rounds)"
+        game.newRound()
     }
     
     override func loadView() {
         super.loadView()
-        game = colorsGame(buttons: [button1, button2, button3, button4],
-                          secretLabel: hexLabel)
+        // добавление рамок для кнопок
+        let buttons = [button1!, button2!, button3!, button4!]
+        for button in buttons {
+            button.setBordersSettings()
+            button.backgroundColor = UIColor.white
+        }
+        // Инициализация игры
+        game = colorGame(from: buttons)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         game.newRound()
-        view.backgroundColor = game.secretColor
     }
+}
 
-    
+fileprivate extension UIButton {
+    func setBordersSettings() {
+        let borderColor = (UIColor.black)
+        self.layer.borderWidth = 0.1
+        self.layer.cornerRadius = 3
+        self.layer.borderColor = borderColor.cgColor
+        self.setTitleColor(borderColor, for: .normal)
+        self.layer.masksToBounds = true
+    }
 }

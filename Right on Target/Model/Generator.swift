@@ -33,28 +33,4 @@ class NumberGenerator: GeneratorProtocol {
     }
 }
 
-class HexColorGenerator: GeneratorProtocol {
-    /*
-     Class generates HEX color of format #000000...FFFFFF
-     */
-    
-    var rNorm: CGFloat = 0.0
-    var gNorm: CGFloat = 0.0
-    var bNorm: CGFloat = 0.0
-    
-    init() {}
-    
-    func getRandomValue() -> Int {
-        let red   = (0...255).randomElement()!
-        let green = (0...255).randomElement()!
-        let blue  = (0...255).randomElement()!
-        
-        rNorm = CGFloat(red)/255
-        gNorm = CGFloat(green)/255
-        bNorm = CGFloat(blue)/255
-        
-        let hexColor: Int = red<<16 | green<<8 | blue<<0
-        
-        return hexColor
-    }
-}
+
